@@ -1,54 +1,69 @@
-<?php
-date_default_timezone_set('Asia/Jakarta');
-include 'functions.php';
-
-if (session_status() == PHP_SESSION_NONE) {
-    session_start();
-}
-
-$message = '';
-
-if ($_SERVER['REQUEST_METHOD'] == 'POST') {
-    $role = $_POST['role'];
-    $unique_id = $_POST['unique_id'];
-    
-    $result = recordAttendance($unique_id, $role);
-    
-    if ($result == "Absensi sukses dikirim") {
-        $message = 'Absensi sukses dikirim';
-    } else if ($result == "Anda sudah absen hari ini") {
-        $message = 'Anda sudah absen hari ini';
-    } else if ($result == "ID Absen tidak terdaftar") {
-        $message = 'ID Absen tidak terdaftar';
-    } else {
-        $message = 'An error occurred: ' . $result;
-    }
-}
-?>
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Absensi</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- Tambahkan ini untuk membuat halaman responsif -->
-    <link rel="stylesheet" href="styles.css">
+    <style>
+        /* Tempatkan CSS di sini */
+        body {
+            font-family: 'Arial', sans-serif;
+            background-image: url('admin.jpg'); /* Ubah sesuai dengan nama dan lokasi gambar latar belakang */
+            background-size: cover;
+            background-position: center;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+        
+        .container {
+            background-color: rgba(255, 255, 255, 0.8);
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            width: 90%;
+            max-width: 800px;
+            text-align: center;
+        }
+        
+        h1 {
+            margin-bottom: 20px;
+            color: #2980b9;
+            font-size: 2.5rem;
+        }
+        
+        .button-container {
+            margin-top: 20px;
+        }
+        
+        .button-link {
+            padding: 12px 24px;
+            color: white;
+            border-radius: 6px;
+            cursor: pointer;
+            background-color: #007BFF;
+            transition: background-color 0.3s ease;
+            text-decoration: none;
+            display: inline-block;
+            margin: 0 10px;
+        }
+        
+        .button-link:hover {
+            background-color: #0056b3;
+        }
+    </style>
 </head>
 <body>
     <div class="container">
-        <h1>Absensi</h1>
-        <form method="post">
-            <select name="role" required>
-                <option value="">Select Role</option>
-                <option value="teacher">Guru</option>
-                <option value="student">Siswa</option>
-            </select>
-            <input type="text" name="unique_id" placeholder="Unique ID" required>
-            <button class="btn-blue" type="submit">Kirim Absensi</button>
-        </form>
-        <?php if ($message): ?>
-            <p><?php echo $message; ?></p>
-        <?php endif; ?>
+        <h1>Select Your Role</h1>
+        <div class="button-container">
+            <a href="user.php" class="button-link">Student</a>
+            <a href="user.php" class="button-link">Teacher</a>
+            <a href="login.php" class="button-link">Admin</a>
+        </div>
     </div>
 </body>
 </html>
