@@ -101,7 +101,11 @@ Aplikasi Absensi Siswa dan Guru adalah sebuah sistem berbasis web yang memungkin
 
 Jika Anda ingin berkontribusi pada proyek ini, silakan fork repositori ini dan buat pull request dengan perubahan yang Anda buat. Jangan lupa untuk mendokumentasikan perubahan Anda dengan baik.
 
+## Kontak
+
+- **Email**: gurugaleri@gmail.com
+- **YouTube**: [@galeriguru240](https://www.youtube.com/@galeriguru240)
+
 ## Lisensi
 
-Aplikasi ini dilisensikan di bawah Lisensi MIT.
-
+Aplikasi ini dilisensikan di bawah [MIT License](LICENSE).
