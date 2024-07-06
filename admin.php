@@ -2,7 +2,7 @@
 // Impor file functions.php
 include 'functions.php';
 // admin.php
-session_start();
+//session_start();
 if (!isset($_SESSION['admin'])) {
     header("Location: login.php");
     exit();
