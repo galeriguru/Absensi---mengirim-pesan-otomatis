@@ -1,0 +1,236 @@
+/* styles.css */
+
+/* Global styles */
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f0f0f0;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.container {
+    background-color: #ffffff;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Shadow lebih jelas */
+    width: 90%;
+    max-width: 800px;
+    text-align: center;
+}
+
+h1 {
+    margin-bottom: 20px;
+    color: #2980b9;
+    font-size: 2.5rem;
+}
+
+form {
+    margin: 20px 0;
+    padding: 20px;
+    background: #fff;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Shadow lebih halus */
+}
+
+form select,
+form input,
+form button {
+    display: block;
+    width: 100%;
+    margin: 10px 0;
+    padding: 12px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    font-size: 16px;
+}
+
+label {
+    margin-bottom: 8px;
+    font-weight: bold;
+    color: #555;
+}
+
+button {
+    padding: 12px 24px;
+    border: none;
+    color: white;
+    border-radius: 6px;
+    cursor: pointer;
+    margin: 10px 0;
+    background-color: #2980b9;
+    transition: background-color 0.3s ease;
+}
+
+button:hover {
+    background-color: #1a5276;
+}
+
+.btn-blue,
+.btn-red {
+    padding: 12px 24px;
+    color: white;
+    border-radius: 6px;
+    cursor: pointer;
+    border: none;
+    font-size: 16px;
+    margin: 4px 2px;
+    display: inline-block;
+    text-decoration: none;
+    text-align: center;
+}
+
+.btn-blue {
+    background-color: #007BFF;
+}
+
+.btn-blue:hover {
+    background-color: #0056b3;
+}
+
+.btn-red {
+    background-color: #dc3545;
+    width: 120px;
+    display: inline-block; /* Tetap inline untuk penempatan yang lebih baik */
+}
+
+.btn-red:hover {
+    background-color: #c82333;
+}
+
+.logout {
+    text-align: center;
+}
+
+ul {
+    list-style: none;
+    padding: 0;
+}
+
+ul li {
+    background: #fff;
+    margin: 10px 0;
+    padding: 12px;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Shadow lebih halus */
+}
+
+.hidden {
+    display: none;
+}
+
+.table-container {
+    margin-top: 20px;
+    overflow-x: auto;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+th,
+td {
+    padding: 12px;
+    border: 1px solid #ddd;
+    text-align: left;
+}
+
+th {
+    background-color: #f2f2f2;
+}
+
+.error {
+    color: #c0392b;
+    margin-top: 10px;
+}
+
+/* Media Queries untuk perangkat mobile */
+@media (max-width: 600px) {
+    .container {
+        width: 100%;
+        padding: 20px;
+    }
+
+    form {
+        padding: 10px;
+    }
+
+    form select,
+    form input,
+    form button {
+        font-size: 14px;
+        padding: 10px;
+    }
+
+    button {
+        padding: 10px;
+    }
+
+    .button-container {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .button-container button {
+        margin: 5px 0;
+    }
+}
+
+/* Untuk container tombol upload */
+.upload-container {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+}
+
+/* Untuk tombol upload */
+.upload-container .button-link {
+    display: inline-block;
+    padding: 12px 24px;
+    color: white;
+    background-color: #007BFF;
+    border-radius: 6px;
+    text-decoration: none;
+    font-size: 16px;
+}
+
+.upload-container .button-link:hover {
+    background-color: #0056b3;
+}
+
+/* Styles untuk tombol lainnya */
+.button-link.btn-blue,
+.button-link.btn-red {
+    padding: 12px 24px;
+    color: white;
+    border-radius: 6px;
+    cursor: pointer;
+    border: none;
+    font-size: 16px;
+    margin: 4px 2px;
+    display: inline-block;
+    text-decoration: none;
+    text-align: center;
+}
+
+.button-link.btn-blue {
+    background-color: #007BFF;
+}
+
+.button-link.btn-blue:hover {
+    background-color: #0056b3;
+}
+
+.button-link.btn-red {
+    background-color: #dc3545;
+    width: 120px;
+    display: inline-block; /* Tetap inline untuk penempatan yang lebih baik */
+}
+
+.button-link.btn-red:hover {
+    background-color: #c82333;
+}
