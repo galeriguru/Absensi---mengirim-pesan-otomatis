@@ -1,6 +1,12 @@
 <?php
 // Impor file functions.php
 include 'functions.php';
+// admin.php
+session_start();
+if (!isset($_SESSION['admin'])) {
+    header("Location: login.php");
+    exit();
+}
 
 // Ambil data kehadiran
 $attendance = getAttendance();
