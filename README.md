@@ -106,6 +106,23 @@ Jika Anda ingin berkontribusi pada proyek ini, silakan fork repositori ini dan b
 - **Email**: gurugaleri@gmail.com
 - **YouTube**: [@galeriguru240](https://www.youtube.com/@galeriguru240)
 
+## Tutorial Membuat Bot Telegram dan Menggunakan Token Bot di functions.php
+Langkah 1: Membuat Bot Telegram
+1. Buka Telegram dan cari bot bernama BotFather.
+2. Mulai percakapan dengan BotFather dengan mengklik tombol Start.
+3. Kirim perintah /newbot untuk membuat bot baru.
+4. Ikuti instruksi yang diberikan BotFather untuk memberi nama dan username untuk bot Anda.
+5. Setelah selesai, BotFather akan memberikan token bot. Token ini digunakan untuk mengakses API Telegram.
+
+Langkah 2: Menambahkan Token Bot ke functions.php
+1. Buka file functions.php di editor kode Anda.
+2. Tambahkan token bot yang telah Anda dapatkan dari BotFather ke file functions.php. Simpan token ini di variabel yang sesuai.
+
+Langkah 3: Mengetahui Idchat guru dan siswa
+1. Buka telegram dan cari bot bernama asja21bot
+2. Mulai percakapan dengan asja21bot dengan mengklik tombol start
+3. Pilih Idku dan akan diberikan idchat
+
 ## Lisensi
 
 Aplikasi ini dilisensikan di bawah [MIT License](LICENSE).
