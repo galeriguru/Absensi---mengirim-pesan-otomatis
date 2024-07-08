@@ -1,7 +1,7 @@
 <?php
 include 'config.php';
 
-$botToken = "TOKEN BOT TELEGRAM"; // Ganti dengan token bot anda
+$botToken = "YOUR_BOT_TOKEN_API"; // Ganti dengan token bot anda
 
 function checkAdminLogin($username, $password) {
     global $pdo;
@@ -82,13 +82,20 @@ function recordAttendance($unique_id, $role) {
     $stmt->execute([$unique_id, $role]);
 
     // Get user details
-    $name = ($role == 'teacher') ? $user['name'] : $user['name'];
-    $chat_id = ($role == 'teacher') ? $user['chat_id'] : $user['chat_id'];
+    $name = $user['name'];
+    $chat_id = $user['chat_id'];
     $timestamp = date('Y-m-d H:i:s');
 
     // Format message
-    $message = "Hello $name\nPresensimu berhasil dikirim pada $timestamp\nStatus: Hadir";
+    $message = "Absen Masuk <b>$name</b> tanggal $timestamp <b>HADIR</b> pada kegiatan belajar di Sekolah\nInformasi ini dikirim secara otomatis dari server sekolah\n<b>No Reply</b>";
+
+    // Convert <b> tags to MarkdownV2 bold format
+    $message = str_replace('<b>', '*', $message);
+    $message = str_replace('</b>', '*', $message);
     
+    // Escape special characters for MarkdownV2
+    $message = str_replace(['-', '_', '.', '!', '`'], ['\-', '\_', '\.', '\!', '\`'], $message);
+
     // Send message to Telegram
     sendMessage($chat_id, $message);
 
@@ -100,7 +107,8 @@ function sendMessage($chat_id, $message) {
     $url = "https://api.telegram.org/bot$botToken/sendMessage";
     $data = [
         'chat_id' => $chat_id,
-        'text' => $message
+        'text' => $message,
+        'parse_mode' => 'MarkdownV2'
     ];
 
     $ch = curl_init($url);
