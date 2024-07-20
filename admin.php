@@ -207,7 +207,7 @@ if (isset($_POST['add_student'])) {
 
     <div id="teacherSection" class="container section">
         <div class="upload-container">
-            <a href="upload.php" class="button-link">Upload Teachers</a>
+            <a href="uploads.php" class="button-link">Upload Teachers</a>
             <a href="format.xls" class="button-link">Download Format</a>
         </div>
 
