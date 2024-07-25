@@ -9,7 +9,7 @@ if (session_status() == PHP_SESSION_NONE) {
 $message = '';
 
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
-    $role = $_POST['role'];
+    $role = 'student';
     $unique_id = $_POST['unique_id'];
     
     $result = recordAttendance($unique_id, $role);
@@ -30,20 +30,15 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Absensi</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- Tambahkan ini untuk membuat halaman responsif -->
+    <title>Absensi Siswa</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
     <div class="container">
-        <h1>Absensi</h1>
+        <h1>Absensi Siswa</h1>
         <form method="post">
-            <select name="role" required>
-                <option value="">Select Role</option>
-                <option value="teacher">Guru</option>
-                <option value="student">Siswa</option>
-            </select>
-            <input type="text" name="unique_id" placeholder="Unique ID" required>
+            <input type="text" name="unique_id" placeholder="Id Chat" required>
             <button class="btn-blue" type="submit">Kirim Absensi</button>
         </form>
         <?php if ($message): ?>
